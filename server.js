@@ -63,7 +63,12 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// 서버 시작
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+// Vercel 환경을 위해 app을 내보냅니다.
+module.exports = app;
+
+// 로컬 환경에서만 서버를 직접 실행합니다.
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+  });
+}
