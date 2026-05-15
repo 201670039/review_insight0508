@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BMW AI Sentiment Analysis</title>
-    <link rel="stylesheet" href="/src/style.css" />
-  </head>
-  <body>
-    <div id="app">
-      <header class="hero">
-        <div class="container">
-          <h1>AI Sentiment Analysis</h1>
-          <p>Experience the precision of BMW Corporate Design combined with advanced AI sentiment analysis.</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BMW AI Sentiment Analysis</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <header class="hero">
+      <div class="container">
+        <h1>AI Sentiment Analysis</h1>
+        <p>Experience the precision of BMW Corporate Design combined with advanced AI sentiment analysis.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="analysis-section">
+        <div class="input-container">
+          <textarea id="textInput" placeholder="분석할 텍스트를 입력하세요..." maxlength="1000"></textarea>
+          <div class="char-count"><span id="currentCharCount">0</span> / 1000</div>
+          <button id="analyzeBtn" class="btn-primary">Analyze Sentiment</button>
         </div>
-      </header>
+      </section>
+    </main>
 
-      <main class="container">
-        <section class="analysis-section">
-          <div class="input-container">
-            <textarea id="textInput" placeholder="분석할 텍스트를 입력하세요..." maxlength="1000"></textarea>
-            <div class="char-count"><span id="currentCharCount">0</span> / 1000</div>
-            <button id="analyzeBtn" class="btn-primary">Analyze Sentiment</button>
-          </div>
-        </section>
-      </main>
-
-      <div id="resultModal" class="modal-overlay">
-        <div class="modal-content">
-          <button id="closeModal" class="modal-close">&times;</button>
-          <div id="resultBadge" class="result-badge">Neutral</div>
-          <h2 id="resultTitle">Analysis Result</h2>
-          <div class="confidence-bar-container">
-            <div id="confidenceBar" class="confidence-bar"></div>
-          </div>
-          <p id="confidenceText">Confidence: 0%</p>
-          <div style="margin-top: 2rem;">
-            <h4 style="margin-bottom: 0.5rem;">Reasoning</h4>
-            <p id="analysisReason" style="font-size: 1rem; color: var(--text-secondary);"></p>
-          </div>
+    <div id="resultModal" class="modal-overlay">
+      <div class="modal-content">
+        <button id="closeModal" class="modal-close">&times;</button>
+        <div id="resultBadge" class="result-badge">Neutral</div>
+        <h2 id="resultTitle">Analysis Result</h2>
+        <div class="confidence-bar-container">
+          <div id="confidenceBar" class="confidence-bar"></div>
+        </div>
+        <p id="confidenceText">Confidence: 0%</p>
+        <div style="margin-top: 2rem;">
+          <h4 style="margin-bottom: 0.5rem;">Reasoning</h4>
+          <p id="analysisReason" style="font-size: 1rem; color: var(--text-secondary);"></p>
         </div>
       </div>
-
-      <footer>
-        <div class="container">
-          <p>&copy; 2026 BMW AI Sentiment Lab. All rights reserved.</p>
-        </div>
-      </footer>
     </div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 BMW AI Sentiment Lab. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
