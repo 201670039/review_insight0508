@@ -7,9 +7,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "start:server": "node review_insight/server.js",
-    "dev:server": "nodemon review_insight/server.js",
-    "dev:client": "vite review_insight",
+    "start:server": "node server.js",
+    "dev:server": "nodemon server.js",
+    "dev:client": "vite",
     "dev": "npm run dev:client"
   },
   "keywords": [],
