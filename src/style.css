@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;700&display=swap');
+
+:root {
+  --bmw-blue: #1c69d4;
+  --surface-dark: #1a2129;
+  --canvas-white: #ffffff;
+  --text-primary: #1a2129;
+  --text-secondary: #666666;
+  --border-hairline: 1px solid #e0e0e0;
+  --border-focus: 1px solid var(--bmw-blue);
+  
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  font-weight: 300;
+  background-color: var(--canvas-white);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .display-700 {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(26, 33, 41, 0.8), rgba(26, 33, 41, 0.8)), url('/hero-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--canvas-white);
+  padding: 8rem 0;
+  text-align: center;
+  border-bottom: 4px solid var(--bmw-blue);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+
+/* Input Section */
+.analysis-section {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 1.5rem;
+  font-family: var(--font-main);
+  font-size: 1.1rem;
+  font-weight: 300;
+  border: var(--border-hairline);
+  border-radius: 0;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+textarea:focus {
+  border: var(--border-focus);
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: var(--text-secondary);
+}
+
+/* Button */
+.btn-primary {
+  margin-top: 2rem;
+  background-color: var(--bmw-blue);
+  color: white;
+  border: none;
+  border-radius: 0;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s active;
+}
+
+.btn-primary:hover {
+  background-color: #1557b0;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--canvas-white);
+  width: 90%;
+  max-width: 600px;
+  padding: 3rem;
+  border-radius: 0;
+  position: relative;
+  border-top: 8px solid var(--bmw-blue);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.result-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.badge-positive { background-color: #e6f4ea; color: #1e8e3e; }
+.badge-negative { background-color: #fce8e6; color: #d93025; }
+.badge-neutral { background-color: #f1f3f4; color: #5f6368; }
+
+.confidence-bar-container {
+  height: 8px;
+  background-color: #f1f3f4;
+  margin: 1.5rem 0;
+}
+
+.confidence-bar {
+  height: 100%;
+  background-color: var(--bmw-blue);
+  width: 0%;
+  transition: width 1s ease-out;
+}
+
+/* Footer */
+footer {
+  padding: 3rem 0;
+  text-align: center;
+  border-top: var(--border-hairline);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
